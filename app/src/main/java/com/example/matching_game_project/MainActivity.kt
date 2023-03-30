@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val images: MutableList<Int> = mutableListOf(apple, banana, grapes, orange, apple, banana,
-                grapes, orange, apple, banana, grapes, orange, apple, banana, grapes, orange)
+        val images: MutableList<Int> = mutableListOf(apple, banana, grapes, orange, cherry, mango, strawberry, watermelon,
+                apple, banana, grapes, orange, cherry, mango, strawberry, watermelon)
 
         val buttons = arrayOf(Card1, Card2, Card3, Card4, Card5, Card6, Card7, Card8, Card9, Card10,
                 Card11, Card12, Card13, Card14, Card15, Card16)
@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         val compliments: MutableList<String> = mutableListOf("Respects!", "Fantastic!", "Hats off!", "Sensational!",
                 "Well done!", "Good job!", "You rock!", "Nice going!", "Good show!", "Good going!", "Good for you!", "Good on you!",
                 "Good one mate!", "I am impressed!", "Way to go!", "You did it!", "You're a genius!", "You're the best!", "You've got it!")
-
         val cardBack = cardasset
         var clicked = 0
         var turnOver = false
