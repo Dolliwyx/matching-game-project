@@ -4,13 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.example.matching_game_project.R.drawable.*
 import com.example.matching_game_project.R.id.*
-
+import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         val images: MutableList<Int> = mutableListOf(apple, banana, grapes, orange, apple, banana,
                 grapes, orange, apple, banana, grapes, orange, apple, banana, grapes, orange)
 
-
         val buttons = arrayOf(Card1, Card2, Card3, Card4, Card5, Card6, Card7, Card8, Card9, Card10,
                 Card11, Card12, Card13, Card14, Card15, Card16)
+
+        val compliments: MutableList<String> = mutableListOf("Respects!", "Fantastic!", "Hats off!", "Sensational!",
+                "Well done!", "Good job!", "You rock!", "Nice going!", "Good show!", "Good going!", "Good for you!", "Good on you!",
+                "Good one mate!", "I am impressed!", "Way to go!", "You did it!", "You're a genius!", "You're the best!", "You've got it!")
 
         val cardBack = cardasset
         var clicked = 0
@@ -78,6 +80,8 @@ class MainActivity : AppCompatActivity() {
                         turnOver = false
                         clicked = 0
                         matches++
+                        val compliment = compliments[Random.nextInt(compliments.size)]
+                        Toast.makeText(this, compliment, Toast.LENGTH_SHORT).show()
                         if (matches == 8) Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show()
                     } else {
                         button.text = "cardBack"
